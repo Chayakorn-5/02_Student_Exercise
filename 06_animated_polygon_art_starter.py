@@ -17,7 +17,7 @@ screen.tracer(0)  # The entire frame is displayed with screen.update().
 rng = random.Random(17)
 colors = ["cyan", "springgreen", "orange", "deepskyblue", "plum", "yellow"]
 shapes = []
-for _ in range(12):
+for _ in range(10):
     x = rng.randint(-290, 210)
     y = rng.randint(-170, 120)
     shape = Polygon(x, y, rng.randint(3, 6), rng.randint(35, 105),
@@ -27,7 +27,7 @@ for _ in range(12):
     # the shape's current position.
     shapes.append((shape, x, y, rng.random() * 6.28))
 
-for frame in range(100):
+for frame in range(500):
     for shape, home_x, home_y, phase in shapes:
         x = home_x + 32 * math.cos(frame * 0.07 + phase)
         y = home_y + 23 * math.sin(frame * 0.07 + phase)
