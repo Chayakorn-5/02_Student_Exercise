@@ -12,19 +12,19 @@ screen.title("Student Polygon Art")
 screen.bgcolor("black")
 screen.tracer(0)  # We draw the whole scene before refreshing the screen.
 
-colors = ["cyan", "turquoise", "orange", "yellowgreen", "deepskyblue",
+colors = ["cyan", "orange", "yellowgreen", "deepskyblue",
           "salmon", "plum", "lightgreen", "gold", "pink", "white"]
 rng = random.Random(12)
 
 polygons = []  # Hold references so the Polygon objects remain accessible.
-for _ in range(20):
-    sides = rng.randint(3, 6)
-    side_length = rng.randint(35, 120)
+for _ in range(17):
+    sides = rng.randint(3, 7)
+    side_length = rng.randint(50, 100)
     x = rng.randint(-350, 260)
     y = rng.randint(-225, 180)
     color = rng.choice(colors)
     pen_size = rng.randint(1, 7)
-    angle = rng.randint(0, 359)
+    angle = rng.randint(0, 300)
     polygon = Polygon(x, y, sides, side_length, color, pen_size, angle)
     polygon.draw()
     polygons.append(polygon)
